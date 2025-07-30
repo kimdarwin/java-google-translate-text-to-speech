@@ -31,11 +31,12 @@
 
 ### Supported Platforms
 - Linux with X11 (tested on Ubuntu 24.04+)
+- Windows 10/11 (tested on Windows 10+)
 - Debian-based distributions
 - RedHat/CentOS/Fedora (experimental)
 - Arch Linux (experimental)
 
 ### Known Limitations
-- Requires graphical environment (X11)
-- Linux-only (no Windows/macOS support)
+- Requires graphical environment (X11 on Linux, native on Windows)
+- Cross-platform support (Linux and Windows)
 - May require manual permissions for screenshot access

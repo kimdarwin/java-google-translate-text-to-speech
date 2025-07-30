@@ -16,28 +16,53 @@ A Python-based system that captures desktop screenshots periodically, performs O
 
 ### System Requirements
 
-- Linux (tested on Ubuntu 24.04+)
+- **Linux** (tested on Ubuntu 24.04+) with X11 display server
+- **Windows** 10/11 (tested on Windows 10+)  
 - Python 3.8 or higher
 - Tesseract OCR engine
-- X11 display server (for screenshot capture)
 
 ### System Dependencies
 
-Install the required system packages:
-
+**For Linux (Ubuntu/Debian):**
 ```bash
 sudo apt update
 sudo apt install -y python3.13-venv python3-pip tesseract-ocr python3-tk
 ```
 
+**For Windows:**
+1. Install Python 3.8+ from [python.org](https://python.org) (check "Add Python to PATH")
+2. Install Tesseract OCR from [UB-Mannheim/tesseract](https://github.com/UB-Mannheim/tesseract/wiki)
+
 ## Installation
+
+### Automated Installation (Recommended)
+
+**Linux:**
+```bash
+./install.sh
+```
+
+**Windows:**
+```cmd
+install_windows.bat
+```
+
+### Manual Installation
 
 1. **Clone or download the project files**
 
 2. **Create a Python virtual environment:**
+   
+   **Linux/macOS:**
    ```bash
    python3 -m venv screenshot_ocr_env
    source screenshot_ocr_env/bin/activate
+   ```
+   
+   **Windows:**
+   ```cmd
+   python -m venv screenshot_ocr_env
+   screenshot_ocr_env\Scripts\activate
    ```
 
 3. **Install Python dependencies:**
@@ -49,10 +74,24 @@ sudo apt install -y python3.13-venv python3-pip tesseract-ocr python3-tk
 
 ### Basic Usage
 
-Run the system with default settings:
-
+**Linux:**
 ```bash
+./run_screenshot_ocr.sh
+```
+
+**Windows:**
+```cmd
+run_screenshot_ocr.bat
+```
+
+**Manual (any platform):**
+```bash
+# Linux/macOS
 source screenshot_ocr_env/bin/activate
+python screenshot_ocr.py
+
+# Windows
+screenshot_ocr_env\Scripts\activate
 python screenshot_ocr.py
 ```
 

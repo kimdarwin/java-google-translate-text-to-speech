@@ -97,6 +97,7 @@ class ScreenshotOCR:
     def capture_screenshot(self):
         """Capture a screenshot of the entire desktop."""
         try:
+            # Use ImageGrab.grab() which works on both Windows and Linux (with X11)
             screenshot = ImageGrab.grab()
             self.last_screenshot = screenshot
             
@@ -108,12 +109,34 @@ class ScreenshotOCR:
             
             return screenshot
         except Exception as e:
-            logging.error(f"Error capturing screenshot: {e}")
+            # On Windows, provide more specific error information
+            import platform
+            if platform.system() == 'Windows':
+                logging.error(f"Error capturing screenshot on Windows: {e}")
+                logging.error("Make sure the application has permission to capture the screen")
+            else:
+                logging.error(f"Error capturing screenshot: {e}")
             return None
     
     def perform_ocr(self, image):
         """Perform OCR on the given image."""
         try:
+            # Set up Tesseract path for Windows if needed
+            import platform
+            if platform.system() == 'Windows':
+                # Try to auto-detect Tesseract on Windows
+                import os
+                tesseract_paths = [
+                    r'C:\Program Files\Tesseract-OCR\tesseract.exe',
+                    r'C:\Program Files (x86)\Tesseract-OCR\tesseract.exe',
+                    os.path.expandvars(r'%LOCALAPPDATA%\Programs\Tesseract-OCR\tesseract.exe')
+                ]
+                
+                for path in tesseract_paths:
+                    if os.path.exists(path):
+                        pytesseract.pytesseract.tesseract_cmd = path
+                        break
+            
             # Convert PIL image to numpy array for OpenCV
             cv_image = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR)
             
@@ -133,6 +156,8 @@ class ScreenshotOCR:
             return self.last_ocr_result
         except Exception as e:
             logging.error(f"Error performing OCR: {e}")
+            if platform.system() == 'Windows':
+                logging.error("On Windows, make sure Tesseract is installed from: https://github.com/UB-Mannheim/tesseract/wiki")
             return ""
     
     def extract_region_around_point(self, x, y, radius=None):

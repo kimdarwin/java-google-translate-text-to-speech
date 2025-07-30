@@ -26,6 +26,10 @@ cp config.json "$EXPORT_DIR/"
 cp requirements.txt "$EXPORT_DIR/"
 cp README.md "$EXPORT_DIR/"
 cp run_screenshot_ocr.sh "$EXPORT_DIR/"
+cp run_screenshot_ocr.bat "$EXPORT_DIR/"
+cp install_windows.bat "$EXPORT_DIR/"
+cp uninstall_windows.bat "$EXPORT_DIR/"
+cp QUICKSTART_WINDOWS.md "$EXPORT_DIR/"
 
 # Create installation script
 echo "Creating installation script..."
@@ -208,9 +212,12 @@ Components:
 - config.json: Configuration file
 - requirements.txt: Python dependencies
 - README.md: Documentation
-- install.sh: Installation script
-- uninstall.sh: Removal script
-- run_screenshot_ocr.sh: Launcher script
+- install.sh: Linux installation script
+- install_windows.bat: Windows installation script
+- uninstall.sh: Linux removal script
+- uninstall_windows.bat: Windows removal script
+- run_screenshot_ocr.sh: Linux launcher script
+- run_screenshot_ocr.bat: Windows launcher script
 
 Dependencies:
 - Python 3.8+
@@ -229,24 +236,42 @@ echo "Creating quick start guide..."
 cat > "$EXPORT_DIR/QUICKSTART.md" << 'EOF'
 # Quick Start Guide
 
-## Installation (Ubuntu/Debian)
+## Installation
 
+### Linux (Ubuntu/Debian)
 1. Extract the archive and navigate to the directory
 2. Run the installation script:
    ```bash
    ./install.sh
    ```
 
+### Windows
+1. Extract the archive and navigate to the directory
+2. Run the installation script:
+   ```cmd
+   install_windows.bat
+   ```
+
 ## Usage
 
 ### Test the System
+**Linux:**
 ```bash
 ./demo.py
 ```
+**Windows:**
+```cmd
+python demo.py
+```
 
 ### Start Screenshot OCR
+**Linux:**
 ```bash
 ./run_screenshot_ocr.sh
+```
+**Windows:**
+```cmd
+run_screenshot_ocr.bat
 ```
 
 ### Stop the System
@@ -325,13 +350,14 @@ cat > "$EXPORT_DIR/CHANGELOG.md" << 'EOF'
 
 ### Supported Platforms
 - Linux with X11 (tested on Ubuntu 24.04+)
+- Windows 10/11 (tested on Windows 10+)
 - Debian-based distributions
 - RedHat/CentOS/Fedora (experimental)
 - Arch Linux (experimental)
 
 ### Known Limitations
-- Requires graphical environment (X11)
-- Linux-only (no Windows/macOS support)
+- Requires graphical environment (X11 on Linux, native on Windows)
+- Cross-platform support (Linux and Windows)
 - May require manual permissions for screenshot access
 EOF
 

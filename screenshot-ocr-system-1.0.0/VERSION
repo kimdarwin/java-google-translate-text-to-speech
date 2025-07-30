@@ -1,6 +1,6 @@
 Screenshot OCR System
 Version: 1.0.0
-Build Date: Wed Jul 30 01:28:45 PM UTC 2025
+Build Date: Wed Jul 30 01:36:10 PM UTC 2025
 Platform: Linux (X11 required)
 
 Components:
@@ -9,9 +9,12 @@ Components:
 - config.json: Configuration file
 - requirements.txt: Python dependencies
 - README.md: Documentation
-- install.sh: Installation script
-- uninstall.sh: Removal script
-- run_screenshot_ocr.sh: Launcher script
+- install.sh: Linux installation script
+- install_windows.bat: Windows installation script
+- uninstall.sh: Linux removal script
+- uninstall_windows.bat: Windows removal script
+- run_screenshot_ocr.sh: Linux launcher script
+- run_screenshot_ocr.bat: Windows launcher script
 
 Dependencies:
 - Python 3.8+

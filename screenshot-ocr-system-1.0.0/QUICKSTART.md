@@ -1,23 +1,41 @@
 # Quick Start Guide
 
-## Installation (Ubuntu/Debian)
+## Installation
 
+### Linux (Ubuntu/Debian)
 1. Extract the archive and navigate to the directory
 2. Run the installation script:
    ```bash
    ./install.sh
    ```
 
+### Windows
+1. Extract the archive and navigate to the directory
+2. Run the installation script:
+   ```cmd
+   install_windows.bat
+   ```
+
 ## Usage
 
 ### Test the System
+**Linux:**
 ```bash
 ./demo.py
 ```
+**Windows:**
+```cmd
+python demo.py
+```
 
 ### Start Screenshot OCR
+**Linux:**
 ```bash
 ./run_screenshot_ocr.sh
+```
+**Windows:**
+```cmd
+run_screenshot_ocr.bat
 ```
 
 ### Stop the System
