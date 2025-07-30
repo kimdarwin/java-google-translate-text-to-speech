@@ -1,0 +1,13 @@
+Click Position: (400, 300)
+Extraction Radius: 100
+Timestamp: 2025-07-30T13:27:07.082829
+Region Bounds: (300, 200, 500, 400)
+--------------------------------------------------
+ea.
+n images
+
+h Tesseract
+
+1g
+
+imulation
