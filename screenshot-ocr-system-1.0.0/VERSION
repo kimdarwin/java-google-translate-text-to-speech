@@ -1,0 +1,25 @@
+Screenshot OCR System
+Version: 1.0.0
+Build Date: Wed Jul 30 01:28:45 PM UTC 2025
+Platform: Linux (X11 required)
+
+Components:
+- screenshot_ocr.py: Main application
+- demo.py: Demonstration script
+- config.json: Configuration file
+- requirements.txt: Python dependencies
+- README.md: Documentation
+- install.sh: Installation script
+- uninstall.sh: Removal script
+- run_screenshot_ocr.sh: Launcher script
+
+Dependencies:
+- Python 3.8+
+- Tesseract OCR
+- PIL (Pillow)
+- OpenCV
+- pynput
+- numpy
+
+Author: AI Assistant
+License: MIT-style (provided as-is)
