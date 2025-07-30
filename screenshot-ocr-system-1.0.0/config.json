@@ -1,0 +1,10 @@
+{
+    "capture_interval": 5,
+    "extraction_radius": 100,
+    "output_dir": "screenshots_output",
+    "tesseract_config": "--psm 6",
+    "image_format": "PNG",
+    "save_full_screenshots": true,
+    "save_extracted_regions": true,
+    "save_ocr_text": true
+}

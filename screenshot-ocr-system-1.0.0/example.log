@@ -1,0 +1,4 @@
+2025-07-30 13:27:06,818 - INFO - Output directories created in: demo_output
+2025-07-30 13:27:06,818 - INFO - ScreenshotOCR initialized
+2025-07-30 13:27:07,082 - INFO - Extracted region saved: demo_output/extracted_regions/region_20250730_132707_081_x400_y300.png
+2025-07-30 13:27:07,082 - INFO - OCR text saved: demo_output/ocr_text/text_20250730_132707_082_x400_y300.txt
